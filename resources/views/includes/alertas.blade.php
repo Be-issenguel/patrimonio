@@ -20,3 +20,14 @@
         });
     </script>
 @endif
+
+<!-- Mensagem para qualquer acção mal sucedida -->
+@if (session()->has('msg_error'))
+    <script>
+        new PNotify({
+            title: 'Erro!',
+            text: "{{ session('msg_error') }}",
+            type: 'error'
+        });
+    </script>
+@endif

@@ -20,4 +20,15 @@
         });
     </script>
 <?php endif; ?>
+
+<!-- Mensagem para qualquer acção mal sucedida -->
+<?php if(session()->has('msg_error')): ?>
+    <script>
+        new PNotify({
+            title: 'Erro!',
+            text: "<?php echo e(session('msg_error')); ?>",
+            type: 'error'
+        });
+    </script>
+<?php endif; ?>
 <?php /**PATH C:\laragon\www\patrimonio\resources\views/includes/alertas.blade.php ENDPATH**/ ?>

@@ -45,8 +45,8 @@
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="#" onclick="event.preventDefault(); editar(<?php echo e($poupanca); ?>)"
-                                    class="text-primary"><i class=" fa fa-edit"></i></a>
+                                <a href="#modalEditar" onclick="event.preventDefault(); editar(<?php echo e($poupanca); ?>)"
+                                    class="modal-editar text-primary"><i class=" fa fa-edit"></i></a>
                                 <a href="" class="text-danger"><i class=" fa fa-trash-o"></i></a>
                             </td>
                         </tr>
@@ -77,7 +77,51 @@
                                         <div class="form-group">
                                             <label for="valor_final">Valor a atingir</label>
                                             <input type="number" min="0" class="form-control" name="valor_final"
-                                                id="valor_final" value="<?php echo e(old('valor_final')); ?>">
+                                                id="valor_final">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <footer class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <button class="btn btn-primary"
+                                onclick="document.getElementById('form-poupanca').submit()">Cadastrar</button>
+                            <button class="btn btn-default modal-dismiss">Cancelar</button>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </div>
+
+        <!-- Modal Editar -->
+        <div id="modalEditar" class="modal-block mfp-hide">
+            <section class="panel">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Editar Poupança</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="modal-wrapper">
+                        <div class="modal-text">
+                            <form action="<?php echo e(action('PoupancaController@update')); ?>" method="post" id="form-poupanca">
+                                <?php echo csrf_field(); ?>
+                                <input type="hidden" name="id" id="id">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="motivo1">Motivo</label>
+                                            <input type="text" class="form-control" name="motivo" id="motivo1"
+                                                value="<?php echo e(old('motivo')); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="valor_final1">Valor a atingir</label>
+                                            <input type="number" min="0" class="form-control" name="valor_final"
+                                                id="valor_final1" value="<?php echo e(old('valor_final')); ?>">
                                         </div>
                                     </div>
                                 </div>

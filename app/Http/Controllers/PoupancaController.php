@@ -72,12 +72,21 @@ class PoupancaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Poupanca  $poupanca
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Poupanca $poupanca)
+    public function update(Request $request)
     {
-        //
+        if (Poupanca::where(['motivo' => $request->motivo, ['id', '!=', $request->id]])->count()) {
+            session()->flash('msg_error', 'Já existe poupança com este motivo');
+            return back();
+        }
+        $poupanca = Poupanca::find($request->id);
+        $poupanca->motivo = $request->motivo;
+        $poupanca->valor_final = $request->valor_final;
+        if ($poupanca->save()) {
+            session()->flash('msg_success', 'Poupanca ' . $poupanca->motivo . ' actualizada');
+        }
+        return back();
     }
 
     /**

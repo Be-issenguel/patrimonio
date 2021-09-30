@@ -1,10 +1,17 @@
 function editar(poupanca) {
-    console.log(poupanca);
-    $(".modal-cadastro").modal()
+    $("#id").val(poupanca.id)
+    $("#motivo1").val(poupanca.motivo)
+    $("#valor_final1").val(poupanca.valor_final)
 }
 
 $(function () {
     $('.modal-cadastro').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        modal: true
+    });
+
+    $('.modal-editar').magnificPopup({
         type: 'inline',
         preloader: false,
         modal: true
@@ -18,4 +25,4 @@ $(function () {
         $.magnificPopup.close();
     });
 
-}).apply(this, [jQuery]);
+});

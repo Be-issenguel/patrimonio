@@ -26,4 +26,6 @@ Route::prefix('poupanca')->group(function () {
     Route::get('listagem', 'PoupancaController@index');
 
     Route::post('cadastrar', 'PoupancaController@store');
+
+    Route::post('editar', 'PoupancaController@update');
 });

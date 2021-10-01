@@ -316,6 +316,7 @@
     <!-- App Script -->
     <script src="{{ asset('js/app/poupanca.js') }}"></script>
     @include('includes.alertas')
+    @include('includes.modals')
 </body>
 
 </html>

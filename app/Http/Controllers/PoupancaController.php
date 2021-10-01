@@ -80,12 +80,16 @@ class PoupancaController extends Controller
             session()->flash('msg_error', 'Já existe poupança com este motivo');
             return back();
         }
+
         $poupanca = Poupanca::find($request->id);
+        if ($poupanca->valor_atual > $request->valor_final) {
+            session()->flash('msg_error', 'O valor final não pode ser inferior ao inicial');
+            return back();
+        }
         $poupanca->motivo = $request->motivo;
         $poupanca->valor_final = $request->valor_final;
-        if ($poupanca->save()) {
-            session()->flash('msg_success', 'Poupanca ' . $poupanca->motivo . ' actualizada');
-        }
+        $poupanca->save();
+        session()->flash('msg_success', 'Poupanca ' . $poupanca->motivo . ' actualizada');
         return back();
     }
 
@@ -98,5 +102,30 @@ class PoupancaController extends Controller
     public function destroy(Poupanca $poupanca)
     {
         //
+    }
+
+    /**
+     * Creditar poupança.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function creditar(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+            'valor' => 'required'
+        ]);
+
+        $poupanca = Poupanca::find($request->id);
+        if ($poupanca->valor_atual + $request->valor > $poupanca->valor_final) {
+            session()->flash('msg_error', 'O valor atual não pode superar o objectivo');
+            return back();
+        }
+
+        $poupanca->valor_atual += $request->valor;
+        $poupanca->save();
+        session()->flash('msg_success', 'Creditado ' . $request->valor . ' à poupança ' . $poupanca->motivo);
+        return back();
     }
 }

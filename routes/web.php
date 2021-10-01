@@ -28,4 +28,6 @@ Route::prefix('poupanca')->group(function () {
     Route::post('cadastrar', 'PoupancaController@store');
 
     Route::post('editar', 'PoupancaController@update');
+
+    Route::post('creditar', 'PoupancaController@creditar');
 });

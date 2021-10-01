@@ -29,7 +29,7 @@
                     </li>
                     <li>
                         <a href="<?php echo e(action('PoupancaController@index')); ?>">
-                            <span class="pull-right label label-primary">182</span>
+                            <span class="pull-right label label-primary">18</span>
                             <i class="fa fa-money" aria-hidden="true"></i>
                             <span>Poupanças</span>
                         </a>

@@ -16,6 +16,8 @@
                         <th>Valor Actual</th>
                         <th>Objetivo</th>
                         <th class="hidden-phone">Progresso</th>
+                        <th>Data de Início</th>
+                        <th>Última Actualização</th>
                         <th>Status</th>
                         <th>Ação</th>
                     </tr>
@@ -37,6 +39,8 @@
                                     </div>
                                 </div>
                             </td>
+                            <td><?php echo e($poupanca->created_at); ?></td>
+                            <td><?php echo e($poupanca->updated_at); ?></td>
                             <td class="center">
                                 <?php if($poupanca->valor_atual >= $poupanca->valor_final): ?>
                                     <span class="label label-success">finalizada</span>

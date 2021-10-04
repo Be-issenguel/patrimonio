@@ -34,7 +34,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo e(action('DespesaController@index')); ?>">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             <span>Despesas</span>
                         </a>

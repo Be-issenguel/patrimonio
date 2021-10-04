@@ -39,3 +39,10 @@ Route::prefix('rendimento')->group(function () {
 
     Route::post('editar', 'RendimentoController@update');
 });
+
+
+Route::prefix('despesa')->group(function () {
+    Route::get('listagem', 'DespesaController@index');
+
+    Route::post('cadastrar', 'DespesaController@store');
+});

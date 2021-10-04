@@ -316,6 +316,7 @@
     <!-- App Script -->
     <script src="{{ asset('js/app/poupanca.js') }}"></script>
     <script src="{{ asset('js/app/rendimento.js') }}"></script>
+    <script src="{{ asset('js/app/despesa.js') }}"></script>
     @include('includes.alertas')
     @include('includes.modals')
 </body>

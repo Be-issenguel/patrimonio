@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Rendimento;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\TryCatch;
 
 class RendimentoController extends Controller
 {
@@ -36,7 +37,22 @@ class RendimentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tipo' => 'required',
+            'valor' => 'required|min:2',
+        ]);
+
+        $rendimento = new Rendimento();
+        $rendimento->tipo = $request->tipo;
+        $rendimento->montante = $request->valor;
+        $rendimento->mes = $request->mes;
+        try {
+            $rendimento->save();
+            session()->flash('msg_success', 'Rendimento salvo com sucesso!');
+        } catch (\Throwable $th) {
+            session()->flash('msg_error', 'Erro: ' . $th);
+        }
+        return back();
     }
 
     /**

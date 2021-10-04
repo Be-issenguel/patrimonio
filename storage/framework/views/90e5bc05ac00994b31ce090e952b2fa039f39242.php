@@ -14,14 +14,16 @@
                     <tr>
                         <th>Tipo</th>
                         <th>Montante</th>
+                        <th>Data</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $__currentLoopData = $rendimentos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rendimento): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr class="gradeX">
-                            <td><?php echo e($rendimento->motivo); ?></td>
-                            <td><?php echo e($rendimento->montante); ?></td>
+                            <td><?php echo e($rendimento->tipo); ?></td>
+                            <td><?php echo e(number_format($rendimento->montante, 2, ',', '.')); ?></td>
+                            <td><?php echo e($rendimento->created_at); ?></td>
                             <td>
                                 <a href="#modalCreditar" onclick="event.preventDefault(); creditar(<?php echo e($rendimento); ?>)"
                                     class="modal-creditar text-success"><i class=" fa fa-money"></i></a>

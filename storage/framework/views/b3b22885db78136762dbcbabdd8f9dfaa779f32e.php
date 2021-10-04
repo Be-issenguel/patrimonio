@@ -315,6 +315,7 @@
     <script src="<?php echo e(asset('assets/javascripts/tables/examples.datatables.tabletools.js')); ?>"></script>
     <!-- App Script -->
     <script src="<?php echo e(asset('js/app/poupanca.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/app/rendimento.js')); ?>"></script>
     <?php echo $__env->make('includes.alertas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('includes.modals', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>

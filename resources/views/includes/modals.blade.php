@@ -121,3 +121,70 @@
         </footer>
     </section>
 </div>
+
+<!-- Modal  para cadastro de rendimento -->
+<div id="modalCadastroRendimento" class="modal-block mfp-hide">
+    <section class="panel">
+        <header class="panel-heading">
+            <h2 class="panel-title">Novo Rendimento</h2>
+        </header>
+        <div class="panel-body">
+            <div class="modal-wrapper">
+                <div class="modal-text">
+                    <form action="{{ action('RendimentoController@store') }}" method="post" id="form-rendimento">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="motivo">Tipo</label>
+                                    <select name="tipo" id="tipo" class="form-control">
+                                        <option value="SALARIAL">SALARIAL</option>
+                                        <option value="PRESTAÇÃO DE SERVIÇOS">PRESTAÇÃO DE SERVIÇOS</option>
+                                        <option value="NEGÓCIO">NEGÓCIO</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="valor">Montante</label>
+                                    <input type="number" min="0" class="form-control" name="valor" id="valor">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="valor">Mês</label>
+                                    <select name="mes" id="mes" class="form-control">
+                                        <option value="JANEIRO">JANEIRO</option>
+                                        <option value="FEVEREIRO">FEVEREIRO</option>
+                                        <option value="MARÇO">MARÇO</option>
+                                        <option value="ABRIL">ABRIL</option>
+                                        <option value="MAIO">MAIO</option>
+                                        <option value="JUNHO">JUNHO</option>
+                                        <option value="JULHO">JULHO</option>
+                                        <option value="AGOSTO">AGOSTO</option>
+                                        <option value="SETEMBRO">SETEMBRO</option>
+                                        <option value="OUTUBRO">OUTUBRO</option>
+                                        <option value="NOVEMBRO">NOVEMBRO</option>
+                                        <option value="DEZEMBRO">DEZEMBRO</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button class="btn btn-primary"
+                        onclick="document.getElementById('form-rendimento').submit()">Cadastrar</button>
+                    <button class="btn btn-default modal-dismiss">Cancelar</button>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>

@@ -315,6 +315,7 @@
     <script src="{{ asset('assets/javascripts/tables/examples.datatables.tabletools.js') }}"></script>
     <!-- App Script -->
     <script src="{{ asset('js/app/poupanca.js') }}"></script>
+    <script src="{{ asset('js/app/rendimento.js') }}"></script>
     @include('includes.alertas')
     @include('includes.modals')
 </body>

@@ -14,14 +14,16 @@
                     <tr>
                         <th>Tipo</th>
                         <th>Montante</th>
+                        <th>Data</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($rendimentos as $rendimento)
                         <tr class="gradeX">
-                            <td>{{ $rendimento->motivo }}</td>
-                            <td>{{ $rendimento->montante }}</td>
+                            <td>{{ $rendimento->tipo }}</td>
+                            <td>{{ number_format($rendimento->montante, 2, ',', '.') }}</td>
+                            <td>{{ $rendimento->created_at }}</td>
                             <td>
                                 <a href="#modalCreditar" onclick="event.preventDefault(); creditar({{ $rendimento }})"
                                     class="modal-creditar text-success"><i class=" fa fa-money"></i></a>

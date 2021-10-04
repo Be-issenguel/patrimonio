@@ -31,3 +31,7 @@ Route::prefix('poupanca')->group(function () {
 
     Route::post('creditar', 'PoupancaController@creditar');
 });
+
+Route::prefix('rendimento')->group(function () {
+    Route::get('listagem', 'RendimentoController@index');
+});

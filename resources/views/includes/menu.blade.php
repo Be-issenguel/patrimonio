@@ -28,6 +28,18 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ action('RendimentoController@index') }}">
+                            <i class="fa fa-signal" aria-hidden="true"></i>
+                            <span>Rendimentos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <span>Despesas</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ action('PoupancaController@index') }}">
                             <span class="pull-right label label-primary">18</span>
                             <i class="fa fa-money" aria-hidden="true"></i>

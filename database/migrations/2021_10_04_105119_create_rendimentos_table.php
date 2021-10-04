@@ -15,7 +15,7 @@ class CreateRendimentosTable extends Migration
     {
         Schema::create('rendimentos', function (Blueprint $table) {
             $table->id();
-            $table->enum('tipo', ['SALARIAL', 'PRESTAÇÃO DE SERVIÇO', 'LUCRO DE NEGÓCIO']);
+            $table->enum('tipo', ['SALARIAL', 'PRESTAÇÃO DE SERVIÇOS', 'LUCRO DE NEGÓCIO']);
             $table->double('montante', 11, 2);
             $table->string('mes');
             $table->timestamps();

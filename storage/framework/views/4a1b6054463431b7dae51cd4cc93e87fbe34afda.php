@@ -209,7 +209,7 @@
                                     <select name="tipo" id="tipo" class="form-control">
                                         <option value="SALARIAL">SALARIAL</option>
                                         <option value="PRESTAÇÃO DE SERVIÇOS">PRESTAÇÃO DE SERVIÇOS</option>
-                                        <option value="NEGÓCIO">NEGÓCIO</option>
+                                        <option value="LUCRO DE NEGÓCIO">LUCRO DE NEGÓCIO</option>
                                     </select>
                                 </div>
                             </div>
@@ -218,8 +218,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="valor">Montante</label>
-                                    <input type="number" min="0" class="form-control" name="valor" id="valor">
+                                    <label for="valor-rendimento">Montante</label>
+                                    <input type="number" min="0" class="form-control" name="valor"
+                                        id="valor-rendimento">
                                 </div>
                             </div>
                             <div class="col-md-6">

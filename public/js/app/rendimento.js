@@ -1,6 +1,6 @@
 function editarRendimento(rendimento) {
     $("#rendimento-id").val(rendimento.id)
-    $("#valor").val(rendimento.valor)
+    $("#valor-rendimento").val(rendimento.montante)
 }
 
 $(function () {

@@ -14,7 +14,7 @@
                     <tr>
                         <th>Tipo</th>
                         <th>Montante</th>
-                        <th>Data</th>
+                        <th>Mês</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -23,12 +23,11 @@
                         <tr class="gradeX">
                             <td>{{ $rendimento->tipo }}</td>
                             <td>{{ number_format($rendimento->montante, 2, ',', '.') }}</td>
-                            <td>{{ $rendimento->created_at }}</td>
+                            <td>{{ $rendimento->mes }}</td>
                             <td>
-                                <a href="#modalCreditar" onclick="event.preventDefault(); creditar({{ $rendimento }})"
-                                    class="modal-creditar text-success"><i class=" fa fa-money"></i></a>
-                                <a href="#modalEditar" onclick="event.preventDefault(); editar({{ $rendimento }})"
-                                    class="modal-editar text-primary"><i class=" fa fa-edit"></i></a>
+                                <a href="#modalEditarRendimento"
+                                    onclick="event.preventDefault(); editarRendimento({{ $rendimento }})"
+                                    class="modal-editar-rendimento text-primary"><i class=" fa fa-edit"></i></a>
                                 <a href="" class="text-danger"><i class=" fa fa-trash-o"></i></a>
                             </td>
                         </tr>

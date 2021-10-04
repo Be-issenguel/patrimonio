@@ -36,4 +36,6 @@ Route::prefix('rendimento')->group(function () {
     Route::get('listagem', 'RendimentoController@index');
 
     Route::post('cadastrar', 'RendimentoController@store');
+
+    Route::post('editar', 'RendimentoController@update');
 });

@@ -1,9 +1,16 @@
-function editar(rendimento) {
-
+function editarRendimento(rendimento) {
+    $("#rendimento-id").val(rendimento.id)
+    $("#valor").val(rendimento.valor)
 }
 
 $(function () {
     $('.modal-cadastro-rendimento').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        modal: true
+    });
+
+    $('.modal-editar-rendimento').magnificPopup({
         type: 'inline',
         preloader: false,
         modal: true

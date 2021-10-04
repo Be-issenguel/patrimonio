@@ -40,6 +40,7 @@ class RendimentoController extends Controller
         $request->validate([
             'tipo' => 'required',
             'valor' => 'required|min:2',
+            'mes' => 'required',
         ]);
 
         $rendimento = new Rendimento();
@@ -81,12 +82,29 @@ class RendimentoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Rendimento  $rendimento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rendimento $rendimento)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'rendimento_id' => 'required',
+            'tipo' => 'required',
+            'mes' => 'required',
+            'valor' => 'required|min:2',
+        ]);
+
+        $rendimento = Rendimento::find($request->rendimento_id);
+
+        $rendimento->tipo = $request->tipo;
+        $rendimento->montante = $request->valor;
+        $rendimento->mes = $request->mes;
+        try {
+            $rendimento->save();
+            session()->flash('msg_success', 'Rendimento actualizado com sucesso!');
+        } catch (\Throwable $th) {
+            session()->flash('msg_error', 'Erro: ' . $th);
+        }
+        return back();
     }
 
     /**

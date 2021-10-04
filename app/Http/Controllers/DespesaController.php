@@ -83,9 +83,25 @@ class DespesaController extends Controller
      * @param  \App\Despesa  $despesa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Despesa $despesa)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'despesa_id' => 'required',
+            'designacao' => 'required',
+            'valor' => 'required',
+        ]);
+
+        $despesa = Despesa::find($request->despesa_id);
+        $despesa->designacao = $request->designacao;
+        $despesa->valor = $request->valor;
+        try {
+            $despesa->save();
+            session()->flash('msg_success', 'Despesa actualizada com sucesso!');
+        } catch (\Throwable $th) {
+            session()->flash('msg_success', 'Erro ao actualizar despesa!');
+        }
+
+        return back();
     }
 
     /**

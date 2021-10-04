@@ -25,9 +25,9 @@
                             <td><?php echo e(number_format($despesa->valor, 2, ',', '.')); ?></td>
                             <td><?php echo e(explode(' ', $despesa->created_at)[0]); ?></td>
                             <td>
-                                <a href="#modalEditarRendimento"
-                                    onclick="event.preventDefault(); editarRendimento(<?php echo e($despesa); ?>)"
-                                    class="modal-editar-rendimento text-primary"><i class=" fa fa-edit"></i></a>
+                                <a href="#modalEditarDespesa"
+                                    onclick="event.preventDefault(); editarDespesa(<?php echo e($despesa); ?>)"
+                                    class="modal-editar-despesa text-primary"><i class=" fa fa-edit"></i></a>
                                 <a href="" class="text-danger"><i class=" fa fa-trash-o"></i></a>
                             </td>
                         </tr>

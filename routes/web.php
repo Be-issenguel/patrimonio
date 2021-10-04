@@ -45,4 +45,6 @@ Route::prefix('despesa')->group(function () {
     Route::get('listagem', 'DespesaController@index');
 
     Route::post('cadastrar', 'DespesaController@store');
+
+    Route::post('editar', 'DespesaController@update');
 });

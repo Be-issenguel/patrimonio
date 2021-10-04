@@ -1,6 +1,7 @@
-function editarRendimento(rendimento) {
-    $("#rendimento-id").val(rendimento.id)
-    $("#valor").val(rendimento.valor)
+function editarDespesa(despesa) {
+    $("#despesa-id").val(despesa.id);
+    $("#designacao-despesa").val(despesa.designacao);
+    $("#valor-despesa").val(despesa.valor);
 }
 
 $(function () {
@@ -10,7 +11,7 @@ $(function () {
         modal: true
     });
 
-    $('.modal-editar-rendimento').magnificPopup({
+    $('.modal-editar-despesa').magnificPopup({
         type: 'inline',
         preloader: false,
         modal: true

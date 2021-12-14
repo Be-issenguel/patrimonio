@@ -50,10 +50,10 @@
                             </td>
                             <td>
                                 <a href="#modalCreditar" onclick="event.preventDefault(); creditar({{ $poupanca }})"
-                                    class="modal-creditar text-success"><i class=" fa fa-money"></i></a>
+                                    class="modal-creditar text-success"><i class=" fa fa-piggy-bank"></i></a>
                                 <a href="#modalEditar" onclick="event.preventDefault(); editar({{ $poupanca }})"
                                     class="modal-editar text-primary"><i class=" fa fa-edit"></i></a>
-                                <a href="" class="text-danger"><i class=" fa fa-trash-o"></i></a>
+                                <a href="" class="text-danger"><i class=" fa fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     @endforeach

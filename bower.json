@@ -1,0 +1,17 @@
+{
+  "name": "patrimonio",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Bernardo Issenguel <beissenguel12@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Be-issenguel/patrimonio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

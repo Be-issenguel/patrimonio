@@ -20,7 +20,7 @@
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="<?php echo e(asset('assets/vendor/bootstrap/css/bootstrap.css')); ?>" />
-    <link rel="stylesheet" href="<?php echo e(asset('assets/vendor/font-awesome/css/font-awesome.css')); ?>" />
+    <link rel="stylesheet" href="<?php echo e(asset('assets/vendor/font-awesome/css/all.min.css')); ?>" />
     <link rel="stylesheet" href="<?php echo e(asset('assets/vendor/magnific-popup/magnific-popup.css')); ?>" />
     <link rel="stylesheet" href="<?php echo e(asset('assets/vendor/bootstrap-datepicker/css/datepicker3.css')); ?>" />
 

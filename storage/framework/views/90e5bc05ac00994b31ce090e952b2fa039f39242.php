@@ -15,6 +15,7 @@
                         <th>Tipo</th>
                         <th>Montante</th>
                         <th>Mês</th>
+                        <th>Movimentos</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -24,6 +25,7 @@
                             <td><?php echo e($rendimento->tipo); ?></td>
                             <td><?php echo e(number_format($rendimento->montante, 2, ',', '.')); ?></td>
                             <td><?php echo e($rendimento->mes); ?></td>
+                            <td><?php echo e($rendimento->despesas->count()); ?></td>
                             <td>
                                 <a href="#modalEditarRendimento"
                                     onclick="event.preventDefault(); editarRendimento(<?php echo e($rendimento); ?>)"

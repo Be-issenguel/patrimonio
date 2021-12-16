@@ -62,8 +62,12 @@ class DespesaController extends Controller
             }
         }
 
-        if (Poupanca::find($id)->valor_atual > $request->valor) {
+        if ($poupanca = Poupanca::find($id)->valor_atual > $request->valor) {
             $poupanca = Poupanca::find($id);
+            if ($poupanca->valor_atual < $poupanca->valor_final) {
+                session()->flash('msg_warning', 'Esta poupança ainda não atigiu o seu valor final!');
+                return back();
+            }
             $poupanca->valor_atual -= $request->valor;
             $poupanca->save();
             $poupanca->despesas()->save($despesa);

@@ -13,12 +13,13 @@
                 <thead>
                     <tr>
                         <th>Motivo</th>
-                        <th>Valor Actual</th>
+                        <th>Valor</th>
                         <th>Objetivo</th>
                         <th class="hidden-phone">Progresso</th>
                         <th>Data de Início</th>
                         <th>Última Actualização</th>
                         <th>Status</th>
+                        <th>Movimentos</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -42,15 +43,19 @@
                             <td><?php echo e($poupanca->created_at); ?></td>
                             <td><?php echo e($poupanca->updated_at); ?></td>
                             <td class="center">
-                                <?php if($poupanca->valor_atual >= $poupanca->valor_final): ?>
+                                <?php if($poupanca->status == 'finalizada'): ?>
                                     <span class="label label-success">finalizada</span>
                                 <?php else: ?>
                                     <span class="label label-warning">em progresso</span>
                                 <?php endif; ?>
                             </td>
+                            <td><?php echo e($poupanca->despesas->count()); ?></td>
                             <td>
-                                <a href="#modalCreditar" onclick="event.preventDefault(); creditar(<?php echo e($poupanca); ?>)"
-                                    class="modal-creditar text-success"><i class=" fa fa-piggy-bank"></i></a>
+                                <?php if($poupanca->status == 'progresso'): ?>
+                                    <a href="#modalCreditar" onclick="event.preventDefault(); creditar(<?php echo e($poupanca); ?>)"
+                                        class="modal-creditar text-success"><i class=" fa fa-piggy-bank"></i></a>
+                                <?php endif; ?>
+
                                 <a href="#modalEditar" onclick="event.preventDefault(); editar(<?php echo e($poupanca); ?>)"
                                     class="modal-editar text-primary"><i class=" fa fa-edit"></i></a>
                                 <a href="" class="text-danger"><i class=" fa fa-trash-alt"></i></a>

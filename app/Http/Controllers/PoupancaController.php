@@ -88,6 +88,9 @@ class PoupancaController extends Controller
         }
         $poupanca->motivo = $request->motivo;
         $poupanca->valor_final = $request->valor_final;
+        if ($poupanca->valor_final > $poupanca->valor_atual) {
+            $poupanca->status = 'progresso';
+        }
         $poupanca->save();
         session()->flash('msg_success', 'Poupanca ' . $poupanca->motivo . ' actualizada');
         return back();
@@ -124,6 +127,9 @@ class PoupancaController extends Controller
         }
 
         $poupanca->valor_atual += $request->valor;
+        if ($poupanca->valor_final == $poupanca->valor_atual) {
+            $poupanca->status = 'finalizada';
+        }
         $poupanca->save();
         session()->flash('msg_success', 'Creditado ' . $request->valor . ' à poupança ' . $poupanca->motivo);
         return back();

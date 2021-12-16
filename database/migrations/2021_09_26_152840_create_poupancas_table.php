@@ -18,6 +18,7 @@ class CreatePoupancasTable extends Migration
             $table->string('motivo');
             $table->double('valor_atual', 11, 2)->default(0);
             $table->double('valor_final', 9, 2);
+            $table->enum('status', ['progresso', 'finalizada'])->default('progresso');
             $table->timestamps();
         });
     }

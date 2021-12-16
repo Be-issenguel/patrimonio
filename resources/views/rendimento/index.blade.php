@@ -15,6 +15,7 @@
                         <th>Tipo</th>
                         <th>Montante</th>
                         <th>Mês</th>
+                        <th>Movimentos</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -24,6 +25,7 @@
                             <td>{{ $rendimento->tipo }}</td>
                             <td>{{ number_format($rendimento->montante, 2, ',', '.') }}</td>
                             <td>{{ $rendimento->mes }}</td>
+                            <td>{{ $rendimento->despesas->count() }}</td>
                             <td>
                                 <a href="#modalEditarRendimento"
                                     onclick="event.preventDefault(); editarRendimento({{ $rendimento }})"

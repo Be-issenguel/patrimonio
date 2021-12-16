@@ -1,7 +1,7 @@
 <aside id="sidebar-left" class="sidebar-left">
 
     <div class="sidebar-header">
-        <div class="sidebar-title text-center" >
+        <div class="sidebar-title text-center">
             <h4 style="color: white">Patrimônio</h4>
         </div>
         <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html"
@@ -22,27 +22,29 @@
                     </li>
                     <li>
                         <a href="#">
-                            <span class="pull-right label label-primary">182</span>
-                            <i class="fa fa-exchange" aria-hidden="true"></i>
+                            <span class="pull-right label label-primary">up coming</span>
+                            <i class="fa fa-exchange-alt" aria-hidden="true"></i>
                             <span>Investimentos</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?php echo e(action('RendimentoController@index')); ?>">
+                            <span class="pull-right label label-primary"><?php echo e(\App\Rendimento::count()); ?></span>
                             <i class="fa fa-signal" aria-hidden="true"></i>
                             <span>Rendimentos</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?php echo e(action('DespesaController@index')); ?>">
+                            <span class="pull-right label label-primary"><?php echo e(\App\Despesa::count()); ?></span>
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             <span>Despesas</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?php echo e(action('PoupancaController@index')); ?>">
-                            <span class="pull-right label label-primary">18</span>
-                            <i class="fa fa-money" aria-hidden="true"></i>
+                            <span class="pull-right label label-primary"><?php echo e(\App\Poupanca::count()); ?></span>
+                            <i class="fa fa-piggy-bank" aria-hidden="true"></i>
                             <span>Poupanças</span>
                         </a>
                     </li>

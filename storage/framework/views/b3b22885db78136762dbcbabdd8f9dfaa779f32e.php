@@ -262,7 +262,9 @@
             </div>
         </aside>
     </section>
-
+    <script>
+        var base_url = "<?php echo e(asset('')); ?>";
+    </script>
     <!-- Vendor -->
     <script src="<?php echo e(asset('assets/vendor/jquery/jquery.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js')); ?>"></script>
@@ -305,6 +307,8 @@
 
     <!-- Theme Initialization Files -->
     <script src="<?php echo e(asset('assets/javascripts/theme.init.js')); ?>"></script>
+    <!-- Axios -->
+    <script src="<?php echo e(asset('assets/vendor/axios/dist/axios.min.js')); ?>"></script>
 
 
     <!-- Examples -->

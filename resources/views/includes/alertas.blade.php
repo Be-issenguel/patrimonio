@@ -21,6 +21,17 @@
     </script>
 @endif
 
+<!-- Mensagem para aviso -->
+@if (session()->has('msg_warning'))
+    <script>
+        new PNotify({
+            title: 'Aviso!',
+            text: "{{ session('msg_warning') }}",
+            type: 'warning'
+        });
+    </script>
+@endif
+
 <!-- Mensagem para qualquer acção mal sucedida -->
 @if (session()->has('msg_error'))
     <script>

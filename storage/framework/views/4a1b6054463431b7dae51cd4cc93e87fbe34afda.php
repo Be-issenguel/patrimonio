@@ -271,6 +271,15 @@
                     <form action="<?php echo e(action('DespesaController@store')); ?>" method="post" id="form-despesa">
                         <?php echo csrf_field(); ?>
                         <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="valor">Rendimento ou Poupança</label>
+                                    <select type="text" name="rendimento_poupanca" id="rendimento-poupanca"
+                                        class="form-control">
+
+                                    </select>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor">Designação</label>

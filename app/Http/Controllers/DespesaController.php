@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Despesa;
+use App\Poupanca;
+use App\Rendimento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DespesaController extends Controller
 {
@@ -39,18 +42,37 @@ class DespesaController extends Controller
         $request->validate([
             'designacao' => 'required',
             'valor' => 'required',
+            'rendimento_poupanca' => 'required',
         ]);
+
+        $id = explode('.', $request->rendimento_poupanca)[1];
 
         $despesa = new Despesa();
         $despesa->designacao = $request->designacao;
         $despesa->valor = $request->valor;
-        try {
-            $despesa->save();
-            session()->flash('msg_success', 'Despesa salva com sucesso!');
-        } catch (\Throwable $th) {
-            session()->flash('msg_success', 'Erro ao salvar despesa!');
+        if (Str::startsWith($request->rendimento_poupanca, 'r')) {
+            if (Rendimento::find($id)->montante > $request->valor) {
+                $rendimento = Rendimento::find($id);
+                $rendimento->montante -= $request->valor;
+                $rendimento->save();
+                $rendimento->despesas()->save($despesa);
+            } else {
+                session()->flash('msg_warning', 'Rendimento com montante insuficiente!');
+                return back();
+            }
         }
 
+        if (Poupanca::find($id)->valor_atual > $request->valor) {
+            $poupanca = Poupanca::find($id);
+            $poupanca->valor_atual -= $request->valor;
+            $poupanca->save();
+            $poupanca->despesas()->save($despesa);
+        } else {
+            session()->flash('msg_warning', 'Poupanca com valor insuficiente!');
+            return back();
+        }
+
+        session()->flash('msg_success', 'Despesa salva com sucesso!');
         return back();
     }
 

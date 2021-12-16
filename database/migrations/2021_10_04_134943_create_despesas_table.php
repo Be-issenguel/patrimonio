@@ -17,6 +17,8 @@ class CreateDespesasTable extends Migration
             $table->id();
             $table->string('designacao');
             $table->double('valor');
+            $table->integer('despesable_id');
+            $table->string('despesable_type');
             $table->timestamps();
         });
     }

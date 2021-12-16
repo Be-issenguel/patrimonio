@@ -21,6 +21,17 @@
     </script>
 <?php endif; ?>
 
+<!-- Mensagem para aviso -->
+<?php if(session()->has('msg_warning')): ?>
+    <script>
+        new PNotify({
+            title: 'Aviso!',
+            text: "<?php echo e(session('msg_warning')); ?>",
+            type: 'warning'
+        });
+    </script>
+<?php endif; ?>
+
 <!-- Mensagem para qualquer acção mal sucedida -->
 <?php if(session()->has('msg_error')): ?>
     <script>

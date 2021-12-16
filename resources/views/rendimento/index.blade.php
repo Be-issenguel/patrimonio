@@ -28,7 +28,7 @@
                                 <a href="#modalEditarRendimento"
                                     onclick="event.preventDefault(); editarRendimento({{ $rendimento }})"
                                     class="modal-editar-rendimento text-primary"><i class=" fa fa-edit"></i></a>
-                                <a href="" class="text-danger"><i class=" fa fa-trash-o"></i></a>
+                                <a href="" class="text-danger"><i class=" fa fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     @endforeach

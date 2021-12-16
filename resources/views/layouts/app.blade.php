@@ -262,7 +262,9 @@
             </div>
         </aside>
     </section>
-
+    <script>
+        var base_url = "{{ asset('') }}";
+    </script>
     <!-- Vendor -->
     <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
     <script src="{{ asset('assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js') }}"></script>
@@ -305,6 +307,8 @@
 
     <!-- Theme Initialization Files -->
     <script src="{{ asset('assets/javascripts/theme.init.js') }}"></script>
+    <!-- Axios -->
+    <script src="{{ asset('assets/vendor/axios/dist/axios.min.js') }}"></script>
 
 
     <!-- Examples -->

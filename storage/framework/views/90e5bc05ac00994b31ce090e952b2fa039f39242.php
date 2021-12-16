@@ -28,7 +28,7 @@
                                 <a href="#modalEditarRendimento"
                                     onclick="event.preventDefault(); editarRendimento(<?php echo e($rendimento); ?>)"
                                     class="modal-editar-rendimento text-primary"><i class=" fa fa-edit"></i></a>
-                                <a href="" class="text-danger"><i class=" fa fa-trash-o"></i></a>
+                                <a href="" class="text-danger"><i class=" fa fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Poupanca;
+use App\Rendimento;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -47,4 +49,33 @@ Route::prefix('despesa')->group(function () {
     Route::post('cadastrar', 'DespesaController@store');
 
     Route::post('editar', 'DespesaController@update');
+});
+
+Route::prefix('ajax')->group(function () {
+    Route::get('rendimentos-poupancas', function () {
+        $poupancas = Poupanca::all();
+        $rendimentos = Rendimento::all();
+
+        if ($poupancas->count() && $rendimentos->count()) {
+            return [
+                'poupancas' => $poupancas,
+                'rendimentos' => $rendimentos,
+            ];
+        } else if ($poupancas->count() && $rendimentos->count() == 0) {
+            return [
+                'poupancas' => $poupancas,
+                'rendimentos' => []
+            ];
+        } else if ($poupancas->count() == 0 && $rendimentos->count()) {
+            return [
+                'poupancas' => $rendimentos,
+                'rendimentos' => []
+            ];
+        } else {
+            return [
+                'poupancas' => [],
+                'rendimentos' => []
+            ];
+        }
+    });
 });

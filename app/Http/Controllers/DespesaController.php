@@ -62,7 +62,7 @@ class DespesaController extends Controller
             }
         }
 
-        if ($poupanca = Poupanca::find($id)->valor_atual > $request->valor) {
+        if ($poupanca = Poupanca::find($id)->valor_atual >= $request->valor) {
             $poupanca = Poupanca::find($id);
             if ($poupanca->valor_atual < $poupanca->valor_final) {
                 session()->flash('msg_warning', 'Esta poupança ainda não atigiu o seu valor final!');
@@ -118,7 +118,25 @@ class DespesaController extends Controller
         ]);
 
         $despesa = Despesa::find($request->despesa_id);
+
         $despesa->designacao = $request->designacao;
+        if ($despesa->despesable_type == 'App\Poupanca') {
+            $poupanca = Poupanca::find($despesa->despesable_id);
+            if ($request->valor > $despesa->valor) {
+                $valor_debitar = $request->valor - $despesa->valor;
+                if ($valor_debitar <= $poupanca->valor_atual) {
+                    $poupanca->valor_atual -= $valor_debitar;
+                    $poupanca->save();
+                } else {
+                    session()->flash('msg_error', 'A poupança ' . $poupanca->motivo . ' não tem valor suficiente!');
+                    return back();
+                }
+            } else {
+                $valor_creditar = $despesa->valor - $request->valor;
+                $poupanca->valor_atual += $valor_creditar;
+                $poupanca->save();
+            }
+        }
         $despesa->valor = $request->valor;
         try {
             $despesa->save();

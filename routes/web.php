@@ -37,6 +37,8 @@ Route::prefix('poupanca')->group(function () {
 Route::prefix('rendimento')->group(function () {
     Route::get('listagem', 'RendimentoController@index');
 
+    Route::get('despesas/{id}', 'RendimentoController@despesas');
+
     Route::post('cadastrar', 'RendimentoController@store');
 
     Route::post('editar', 'RendimentoController@update');

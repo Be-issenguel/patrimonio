@@ -14,14 +14,14 @@
                                 <div class="form-group">
                                     <label for="motivo">Motivo</label>
                                     <input type="text" class="form-control" name="motivo" id="motivo"
-                                        value="<?php echo e(old('motivo')); ?>">
+                                        value="<?php echo e(old('motivo')); ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor_final">Valor a atingir</label>
                                     <input type="number" min="0" class="form-control" name="valor_final"
-                                        id="valor_final">
+                                        id="valor_final" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -58,14 +58,14 @@
                                 <div class="form-group">
                                     <label for="motivo1">Motivo</label>
                                     <input type="text" class="form-control" name="motivo" id="motivo1"
-                                        value="<?php echo e(old('motivo')); ?>">
+                                        value="<?php echo e(old('motivo')); ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor_final1">Valor a atingir</label>
                                     <input type="number" min="0" class="form-control" name="valor_final"
-                                        id="valor_final1" value="<?php echo e(old('valor_final')); ?>">
+                                        id="valor_final1" value="<?php echo e(old('valor_final')); ?>" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                 <div class="form-group">
                                     <label for="valor">Valor</label>
                                     <input type="number" min="0" class="form-control" name="valor" id="valor"
-                                        value="<?php echo e(old('valor')); ?>">
+                                        value="<?php echo e(old('valor')); ?>" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor">Montante</label>
-                                    <input type="number" min="0" class="form-control" name="valor" id="valor">
+                                    <input type="number" min="0" class="form-control" name="valor" id="valor"
+                                        autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -207,7 +208,7 @@
                                 <div class="form-group">
                                     <label for="valor-rendimento">Montante</label>
                                     <input type="number" min="0" class="form-control" name="valor"
-                                        id="valor-rendimento">
+                                        id="valor-rendimento" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -257,13 +258,15 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor">Designação</label>
-                                    <input type="text" name="designacao" id="designacao" class="form-control">
+                                    <input type="text" name="designacao" id="designacao" class="form-control"
+                                        autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor">Montante</label>
-                                    <input type="number" min="0" class="form-control" name="valor" id="valor">
+                                    <input type="number" min="0" class="form-control" name="valor" id="valor"
+                                        autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -300,14 +303,14 @@
                                 <div class="form-group">
                                     <label for="designacao-despesa">Designação</label>
                                     <input type="text" name="designacao" id="designacao-despesa" value=""
-                                        class="form-control">
+                                        class="form-control" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor-despesa">Montante</label>
-                                    <input type="number" min="0" class="form-control" name="valor"
-                                        id="valor-despesa">
+                                    <input type="number" min="0" class="form-control" name="valor" id="valor-despesa"
+                                        autocomplete="off">
                                 </div>
                             </div>
                         </div>

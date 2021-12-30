@@ -27,8 +27,8 @@
                     @foreach ($poupancas as $poupanca)
                         <tr class="gradeX">
                             <td>{{ $poupanca->motivo }}</td>
-                            <td>{{ $poupanca->valor_atual }}</td>
-                            <td>{{ $poupanca->valor_final }}</td>
+                            <td>{{ number_format($poupanca->valor_atual, 2, ',', '.') }}</td>
+                            <td>{{ number_format($poupanca->valor_final, 2, ',', '.') }}</td>
                             <td>
                                 <div
                                     class=" progress progress-sm

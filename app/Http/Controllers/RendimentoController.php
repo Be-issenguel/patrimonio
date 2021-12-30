@@ -20,6 +20,18 @@ class RendimentoController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function despesas($id)
+    {
+        $rendimento = Rendimento::findOrFail($id);
+        $despesas = $rendimento->despesas;
+        return view('rendimento.despesas', compact('despesas', 'rendimento'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

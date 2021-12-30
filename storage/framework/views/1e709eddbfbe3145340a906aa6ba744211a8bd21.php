@@ -27,8 +27,8 @@
                     <?php $__currentLoopData = $poupancas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $poupanca): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr class="gradeX">
                             <td><?php echo e($poupanca->motivo); ?></td>
-                            <td><?php echo e($poupanca->valor_atual); ?></td>
-                            <td><?php echo e($poupanca->valor_final); ?></td>
+                            <td><?php echo e(number_format($poupanca->valor_atual, 2, ',', '.')); ?></td>
+                            <td><?php echo e(number_format($poupanca->valor_final, 2, ',', '.')); ?></td>
                             <td>
                                 <div
                                     class=" progress progress-sm

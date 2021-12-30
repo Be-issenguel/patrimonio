@@ -31,16 +31,17 @@ $(function () {
     $('.btn-add-despesa').on('click', function () {
         axios(base_url + 'ajax/rendimentos-poupancas')
             .then(response => {
+                console.log(response.data);
                 html = '';
                 if (response.data.poupancas.length > 0) {
                     response.data.poupancas.forEach((poupanca) => {
-                        html += `<option value="p.${poupanca.id}">${poupanca.motivo}</option>`
+                        html += `<option value="p.${poupanca.id}">Poupança: ${poupanca.motivo}</option>`
                     })
                 }
 
                 if (response.data.rendimentos.length > 0) {
                     response.data.rendimentos.forEach((rendimento) => {
-                        html += `<option value="r.${rendimento.id}">${rendimento.tipo} - ${rendimento.mes}</option>`
+                        html += `<option value="r.${rendimento.id}">Rendimento: ${rendimento.tipo} - ${rendimento.mes}</option>`
                     });
                 }
 
@@ -50,7 +51,7 @@ $(function () {
                 } else {
                     new PNotify({
                         title: 'Alerta!',
-                        text: "Não existe poupança nem rendimento",
+                        text: "Não existe poupança ou rendimento",
                         type: 'warning'
                     });
                 }

@@ -17,6 +17,7 @@ class CreateRendimentosTable extends Migration
             $table->id();
             $table->enum('tipo', ['SALARIAL', 'PRESTAÇÃO DE SERVIÇOS', 'LUCRO DE NEGÓCIO']);
             $table->double('montante', 11, 2);
+            $table->double('montante_inicial', 11, 2);
             $table->string('mes');
             $table->timestamps();
         });

@@ -46,6 +46,7 @@ class RendimentoController extends Controller
         $rendimento = new Rendimento();
         $rendimento->tipo = $request->tipo;
         $rendimento->montante = $request->valor;
+        $rendimento->montante_inicial = $request->valor;
         $rendimento->mes = $request->mes;
         try {
             $rendimento->save();

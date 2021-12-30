@@ -68,8 +68,8 @@ Route::prefix('ajax')->group(function () {
             ];
         } else if ($poupancas->count() == 0 && $rendimentos->count()) {
             return [
-                'poupancas' => $rendimentos,
-                'rendimentos' => []
+                'poupancas' => [],
+                'rendimentos' => $rendimentos
             ];
         } else {
             return [

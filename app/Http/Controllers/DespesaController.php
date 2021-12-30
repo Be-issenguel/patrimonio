@@ -136,6 +136,22 @@ class DespesaController extends Controller
                 $poupanca->valor_atual += $valor_creditar;
                 $poupanca->save();
             }
+        } else {
+            $rendimento = Rendimento::find($despesa->despesable_id);
+            if ($request->valor > $despesa->valor) {
+                $valor_debitar = $request->valor - $despesa->valor;
+                if ($valor_debitar <= $rendimento->montante) {
+                    $rendimento->montante -= $valor_debitar;
+                    $rendimento->save();
+                } else {
+                    session()->flash('msg_error', 'O rendimento ' . $rendimento->tipo . ' não tem valor suficiente!');
+                    return back();
+                }
+            } else {
+                $valor_creditar = $despesa->valor - $request->valor;
+                $rendimento->montante += $valor_creditar;
+                $rendimento->save();
+            }
         }
         $despesa->valor = $request->valor;
         try {

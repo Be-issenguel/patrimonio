@@ -14,6 +14,7 @@
                     <tr>
                         <th>Tipo</th>
                         <th>Montante</th>
+                        <th>Montante Inicial</th>
                         <th>Mês</th>
                         <th>Movimentos</th>
                         <th>Ação</th>
@@ -24,6 +25,7 @@
                         <tr class="gradeX">
                             <td>{{ $rendimento->tipo }}</td>
                             <td>{{ number_format($rendimento->montante, 2, ',', '.') }}</td>
+                            <td>{{ number_format($rendimento->montante_inicial, 2, ',', '.') }}</td>
                             <td>{{ $rendimento->mes }}</td>
                             <td>{{ $rendimento->despesas->count() }}</td>
                             <td>

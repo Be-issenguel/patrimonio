@@ -156,20 +156,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor">Mês</label>
-                                    <select name="mes" id="mes" class="form-control">
-                                        <option value="JANEIRO">JANEIRO</option>
-                                        <option value="FEVEREIRO">FEVEREIRO</option>
-                                        <option value="MARÇO">MARÇO</option>
-                                        <option value="ABRIL">ABRIL</option>
-                                        <option value="MAIO">MAIO</option>
-                                        <option value="JUNHO">JUNHO</option>
-                                        <option value="JULHO">JULHO</option>
-                                        <option value="AGOSTO">AGOSTO</option>
-                                        <option value="SETEMBRO">SETEMBRO</option>
-                                        <option value="OUTUBRO">OUTUBRO</option>
-                                        <option value="NOVEMBRO">NOVEMBRO</option>
-                                        <option value="DEZEMBRO">DEZEMBRO</option>
-                                    </select>
+                                    <input type="date" name="mes" id="mes" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -193,7 +180,7 @@
 <div id="modalEditarRendimento" class="modal-block mfp-hide">
     <section class="panel">
         <header class="panel-heading">
-            <h2 class="panel-title">Novo Rendimento</h2>
+            <h2 class="panel-title">Edição de Rendimento</h2>
         </header>
         <div class="panel-body">
             <div class="modal-wrapper">
@@ -226,20 +213,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="valor">Mês</label>
-                                    <select name="mes" id="mes" class="form-control">
-                                        <option value="JANEIRO">JANEIRO</option>
-                                        <option value="FEVEREIRO">FEVEREIRO</option>
-                                        <option value="MARÇO">MARÇO</option>
-                                        <option value="ABRIL">ABRIL</option>
-                                        <option value="MAIO">MAIO</option>
-                                        <option value="JUNHO">JUNHO</option>
-                                        <option value="JULHO">JULHO</option>
-                                        <option value="AGOSTO">AGOSTO</option>
-                                        <option value="SETEMBRO">SETEMBRO</option>
-                                        <option value="OUTUBRO">OUTUBRO</option>
-                                        <option value="NOVEMBRO">NOVEMBRO</option>
-                                        <option value="DEZEMBRO">DEZEMBRO</option>
-                                    </select>
+                                    <input type="date" name="mes" id="mes" class="form-control">
                                 </div>
                             </div>
                         </div>

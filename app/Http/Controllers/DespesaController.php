@@ -56,6 +56,8 @@ class DespesaController extends Controller
                 $rendimento->montante -= $request->valor;
                 $rendimento->save();
                 $rendimento->despesas()->save($despesa);
+                session()->flash('msg_success', 'Despesa salva com sucesso!');
+                return back();
             } else {
                 session()->flash('msg_warning', 'Rendimento com montante insuficiente!');
                 return back();
@@ -71,13 +73,12 @@ class DespesaController extends Controller
             $poupanca->valor_atual -= $request->valor;
             $poupanca->save();
             $poupanca->despesas()->save($despesa);
+            session()->flash('msg_success', 'Despesa salva com sucesso!');
+            return back();
         } else {
             session()->flash('msg_warning', 'Poupanca com valor insuficiente!');
             return back();
         }
-
-        session()->flash('msg_success', 'Despesa salva com sucesso!');
-        return back();
     }
 
     /**

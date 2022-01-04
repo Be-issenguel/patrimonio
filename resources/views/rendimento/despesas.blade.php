@@ -2,6 +2,7 @@
 @section('conteudo')
     <section class="panel">
         <header class="panel-heading">
+            <h1>Total: {{ number_format($despesas->sum('valor'), 2, ',', '.') }} KZ</h1>
             <h2 class="panel-title">Despesas sobre o rendimento {{ $rendimento->tipo }} refente a data
                 {{ $rendimento->mes }}</h2>
         </header>

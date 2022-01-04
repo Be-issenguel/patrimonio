@@ -2,6 +2,7 @@
 <?php $__env->startSection('conteudo'); ?>
     <section class="panel">
         <header class="panel-heading">
+            <h1>Total: <?php echo e(number_format($despesas->sum('valor'), 2, ',', '.')); ?> KZ</h1>
             <h2 class="panel-title">Despesas sobre o rendimento <?php echo e($rendimento->tipo); ?> refente a data
                 <?php echo e($rendimento->mes); ?></h2>
         </header>
